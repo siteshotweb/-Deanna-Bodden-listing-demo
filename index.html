@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lot 2, 100 Watershore Drive, Stoney Creek | Deanna Bodden, Royal LePage State Realty</title>
+<meta name="description" content="Lot 2 - 100 Watershore Drive, Stoney Creek (Hamilton), Ontario — a brand-new, luxury pre-construction bungalow in The Residences at Watershore, offered by Deanna Bodden, Royal LePage State Realty, Brokerage.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --mblack:#FFFFFF;
+    --mcharcoal:#F4F3F0;
+    --mcard:#FBFAF7;
+    --mline:#E3E0D8;
+    --mwhite:#333333;
+    --crisp:#12233D;
+    --red:#00468C;
+    --redlight:#1F6FB2;
+    --max:1180px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    position:relative;
+    background:var(--mblack); color:var(--mwhite);
+    font-family:'Inter',sans-serif; font-weight:400;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  /* ---------- matte grain overlay (physical texture) ---------- */
+  body::before{
+    content:''; position:fixed; inset:0; z-index:200; pointer-events:none;
+    opacity:0.05; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  h1,h2,h3,.head{font-family:'Cormorant Garamond',serif; font-weight:500; letter-spacing:0.01em; color:var(--crisp);}
+  h2,h3{letter-spacing:0.02em;}
+  .mono{font-family:'JetBrains Mono',monospace; font-weight:300; letter-spacing:0.02em;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  img{display:block; max-width:100%;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px; position:relative; z-index:1;}
+  @media (min-width:768px){ .wrap{padding:0 56px;} }
+  .eyebrow{font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:400; letter-spacing:0.22em; text-transform:uppercase; color:rgba(51,51,51,0.45);}
+  .red{color:var(--red);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition-duration:0.01ms !important;}
+    .reveal{opacity:1 !important; transform:none !important;}
+  }
+
+  /* ---------- placeholders ---------- */
+  .photo-slot{
+    position:relative;
+    background-image:
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 13px),
+      linear-gradient(160deg, #201f1e 0%, #0a0a09 75%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.04), inset 0 -30px 50px rgba(0,0,0,0.55);
+    display:flex; align-items:flex-end;
+  }
+  .tag{
+    font-size:10.5px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--mwhite); background:rgba(255,255,255,0.65);
+    border:0.5px solid rgba(51,51,51,0.3); padding:7px 11px; margin:14px;
+  }
+
+  /* ---------- floating red depth orbs: drift + pulse, ambient not distracting ---------- */
+  .orb{position:absolute; border-radius:50%; filter:blur(70px); pointer-events:none; z-index:0;}
+  .orb-a{width:420px; height:420px; background:radial-gradient(circle, rgba(0,70,140,0.20), transparent 70%); animation:driftA 18s ease-in-out infinite alternate, pulse 7s ease-in-out infinite;}
+  .orb-b{width:300px; height:300px; background:radial-gradient(circle, rgba(0,70,140,0.13), transparent 70%); animation:driftB 22s ease-in-out infinite alternate, pulse 9s ease-in-out infinite;}
+  @keyframes driftA{ from{transform:translate3d(0,0,0) scale(1);} to{transform:translate3d(40px,-30px,0) scale(1.15);} }
+  @keyframes driftB{ from{transform:translate3d(0,0,0) scale(1);} to{transform:translate3d(-30px,30px,0) scale(1.1);} }
+  @keyframes pulse{ 0%,100%{opacity:0.7;} 50%{opacity:1;} }
+
+  /* ---------- background texture plane: slowest layer in the parallax stack ---------- */
+  .bg-plane{
+    position:fixed; inset:-10% -10% -10% -10%; z-index:-1; pointer-events:none;
+    background-image:radial-gradient(circle at 20% 20%, rgba(0,70,140,0.06), transparent 45%), radial-gradient(circle at 80% 70%, rgba(0,70,140,0.05), transparent 45%);
+    will-change:transform;
+  }
+
+  /* ---------- 3D tilt cards (kinetic, gyroscope-style) ---------- */
+  .tilt-wrap{perspective:1400px;}
+  .tilt{
+    position:relative; overflow:hidden;
+    transform-style:preserve-3d; border:1px solid transparent;
+    transition:transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s ease, border-color .5s ease;
+    will-change:transform;
+  }
+  .tilt:hover{ box-shadow:0 30px 60px -20px rgba(18,35,61,0.18), 0 0 0 1px rgba(0,70,140,0.35); border-color:rgba(0,70,140,0.45); }
+  /* specular highlight that tracks the cursor, as if reflecting a light source */
+  .tilt::after{
+    content:''; position:absolute; inset:0; z-index:2; pointer-events:none; opacity:0;
+    background:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%), rgba(0,70,140,0.10), transparent 60%);
+    transition:opacity .4s ease;
+  }
+  .tilt:hover::after{ opacity:1; }
+
+  /* ---------- reveal with depth: Z-axis fly-in ---------- */
+  .reveal{opacity:0; transform:translateY(40px) translateZ(-80px) rotateX(6deg) scale(.9); transform-origin:top center; transition:opacity 1s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1);}
+  .reveal.in{opacity:1; transform:translateY(0) translateZ(0) rotateX(0deg) scale(1);}
+  .stagger.in > *{transition-delay:calc(var(--i, 0) * 90ms);}
+
+  /* ---------- liquid text reveal ---------- */
+  .liquid-line{overflow:hidden; display:block;}
+  .liquid-line span{display:inline-block; transform:translateY(110%); opacity:0; transition:transform 1.2s cubic-bezier(.22,1,.36,1), opacity 1.2s cubic-bezier(.22,1,.36,1);}
+  .reveal.in .liquid-line span{transform:translateY(0); opacity:1;}
+  .reveal.in .liquid-line:nth-child(1) span{transition-delay:.05s;}
+  .reveal.in .liquid-line:nth-child(2) span{transition-delay:.16s;}
+  .reveal.in .liquid-line:nth-child(3) span{transition-delay:.27s;}
+
+  /* ---------- red rule draw-in ---------- */
+  .rule-draw{position:relative; overflow:hidden; height:2px; width:64px; background:var(--mline); margin-top:24px;}
+  .rule-draw span{position:absolute; inset:0; background:var(--red); transform:scaleX(0); transform-origin:left; transition:transform 1.1s cubic-bezier(.65,0,.35,1);}
+  .reveal.in .rule-draw span{transform:scaleX(1);}
+
+  /* ---------- buttons: magnetic, glowing, 3D lift ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font-size:12px; font-weight:500; letter-spacing:0.05em; text-transform:uppercase;
+    padding:16px 28px; border:1px solid transparent; cursor:pointer;
+    transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, background .35s ease, border-color .35s ease, color .35s ease;
+  }
+  .btn:hover{ transform:translateY(-4px) translateZ(10px) scale(1.03); box-shadow:0 20px 40px -12px rgba(0,70,140,0.6), 0 0 24px rgba(0,70,140,0.35); }
+  .btn:active{ transform:translateY(-1px) scale(.98); }
+  .btn-primary{ background:var(--red); color:#fff; }
+  .btn-primary:hover{ background:var(--redlight); }
+  .btn-outline{ border-color:rgba(51,51,51,0.3); color:var(--mwhite); }
+  .btn-outline:hover{ border-color:var(--crisp); }
+  .btn-block{ display:flex; width:100%; }
+  .magnetic{ will-change:transform; }
+
+  /* ---------- marquee ---------- */
+  .marquee{ position:relative; z-index:20; background:var(--mblack); border-top:0.5px solid var(--mline); border-bottom:0.5px solid var(--mline); overflow:hidden; }
+  .marquee-track{ display:flex; width:max-content; animation:scroll-x 26s linear infinite; padding:12px 0; }
+  .marquee-track span.set{ font-family:'JetBrains Mono',monospace; display:flex; align-items:center; gap:16px; padding-right:16px; font-size:12px; font-weight:400; letter-spacing:0.18em; text-transform:uppercase; color:rgba(51,51,51,0.4); }
+  @keyframes scroll-x{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 24px; background:rgba(255,255,255,0.85); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--mline); transition:box-shadow .3s ease;
+  }
+  @media (min-width:768px){ .nav{padding:20px 56px;} }
+  .nav-brand{display:flex; align-items:center; gap:16px;}
+  .nav-badge{font-size:11px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:rgba(51,51,51,0.7); border:1px solid var(--mline); padding:8px 12px;}
+  .nav-id{line-height:1.2;}
+  .nav-id .name{font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:15px; color:var(--crisp);}
+  .nav-id .role{font-size:9px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(51,51,51,0.45); margin-top:2px;}
+  .nav-links{display:none; align-items:center; gap:36px; font-size:12px; font-weight:500; letter-spacing:0.05em; text-transform:uppercase; color:rgba(51,51,51,0.6);}
+  .nav-links a{transition:color .3s ease;}
+  .nav-links a:hover{color:var(--crisp);}
+  @media (min-width:900px){ .nav-links{display:flex;} }
+  .nav-phone{font-size:12px; font-weight:500; border:1px solid rgba(0,70,140,0.55); padding:9px 16px; white-space:nowrap; transition:background .3s ease, border-color .3s ease;}
+  .nav-phone:hover{background:var(--red); border-color:var(--red);}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative; height:100vh; min-height:640px; overflow:hidden; perspective:1400px;}
+  .hero-photo{
+    position:absolute; inset:0; will-change:transform, opacity; transform-origin:center top;
+    transition:opacity .15s linear; transform-style:preserve-3d;
+    align-items:flex-start;
+  }
+  .hero-photo .tag{ margin:96px 0 0 24px; }
+  @media (min-width:768px){ .hero-photo .tag{ margin:112px 0 0 56px; } }
+  .hero-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .hero-photo::after{
+    content:''; position:absolute; inset:0; z-index:2; pointer-events:none; opacity:0;
+    background:radial-gradient(circle 420px at var(--mx,50%) var(--my,50%), rgba(0,70,140,0.14), transparent 60%);
+    transition:opacity .4s ease;
+  }
+  .hero-photo:hover::after{ opacity:1; }
+  .hero-scrim{position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg, rgba(14,14,13,0.15) 0%, rgba(14,14,13,0.55) 40%, rgba(14,14,13,0.15) 60%, rgba(14,14,13,0.9) 100%);}
+  .hero-content{position:absolute; inset:0; z-index:10; display:flex; flex-direction:column; justify-content:flex-end; padding:0 24px 80px; pointer-events:none;}
+  .hero-content a{ pointer-events:auto; }
+  @media (min-width:768px){ .hero-content{padding:0 56px 80px;} }
+  .hero-eyebrow{display:flex; align-items:center; gap:12px; font-size:12px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; color:rgba(236,234,228,0.6); margin-bottom:24px;}
+  .hero-eyebrow .rule{width:32px; height:1px; background:#5CA0DE;}
+  .hero h1{font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(44px,9.5vw,96px); line-height:0.98; letter-spacing:0.01em; max-width:900px; color:#F5F5F2;}
+  .hero-bottom{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:32px; margin-top:56px; padding-top:32px; border-top:1px solid rgba(236,234,228,0.2);}
+  .hero-price-label{font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:400; letter-spacing:0.16em; text-transform:uppercase; color:rgba(236,234,228,0.55); margin-bottom:8px;}
+  .hero-price{font-family:'JetBrains Mono',monospace; font-weight:500; font-size:clamp(24px,3.6vw,32px); color:#5CA0DE; letter-spacing:0.01em;}
+  .hero-price .cur{font-family:'JetBrains Mono',monospace; font-weight:300; font-size:13px; color:rgba(236,234,228,0.5);}
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:12px;}
+  .hero-ctas .btn-outline{ border-color:rgba(236,234,228,0.35); color:#F5F5F2; }
+  .hero-ctas .btn-outline:hover{ border-color:#F5F5F2; }
+
+  /* ---------- sections ---------- */
+  section{padding:96px 0;}
+  .bg-black{background:var(--mblack);}
+  .bg-charcoal{background:var(--mcharcoal);}
+  .bg-card{background:var(--mcard);}
+  .section-head h2{font-size:clamp(28px,4vw,40px); line-height:1.1;}
+
+  /* description */
+  .desc-grid{display:grid; grid-template-columns:1fr; gap:56px;}
+  @media (min-width:768px){ .desc-grid{grid-template-columns:0.8fr 1.4fr; gap:80px;} }
+  .desc-copy{font-size:16px; line-height:1.9; color:rgba(51,51,51,0.7); display:flex; flex-direction:column; gap:24px;}
+  .desc-copy .pull{color:rgba(51,51,51,0.9); border-left:2px solid var(--red); padding-left:20px;}
+
+  /* stats */
+  .stat-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:56px;}
+  @media (min-width:768px){ .stat-grid{grid-template-columns:repeat(4,1fr);} }
+  .stat{background:var(--mcard); padding:28px; cursor:default;}
+  .stat .num{font-family:'JetBrains Mono',monospace; font-weight:500; font-size:30px; color:var(--crisp); margin-bottom:4px; font-variant-numeric:tabular-nums;}
+  .stat .lbl{font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; color:rgba(51,51,51,0.45);}
+
+  .feature-rows{display:grid; grid-template-columns:1fr; gap:0 48px; margin-top:48px; font-size:14px; color:rgba(51,51,51,0.65);}
+  @media (min-width:768px){ .feature-rows{grid-template-columns:1fr 1fr;} }
+  .feature-rows li{display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--mline);}
+  .feature-rows li span.val{font-family:'JetBrains Mono',monospace; color:rgba(51,51,51,0.4); font-size:12px; font-weight:400;}
+
+  .section-top{display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:24px; margin-bottom:56px;}
+  .mls-tag{font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:400; color:rgba(51,51,51,0.4); letter-spacing:0.04em;}
+
+  /* gallery */
+  .gallery-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
+  @media (min-width:768px){ .gallery-grid{grid-template-columns:repeat(4,1fr);} }
+  .gallery-grid .g-big{grid-column:span 1; aspect-ratio:4/5;}
+  @media (min-width:768px){ .gallery-grid .g-big{grid-column:span 2; grid-row:span 2; aspect-ratio:auto;} }
+  .gallery-grid .g-sq{aspect-ratio:1/1;}
+  .gallery-grid .g-tall{aspect-ratio:4/5;}
+  @media (min-width:768px){ .gallery-grid .g-wide{grid-column:span 2;} }
+
+  /* floor plans */
+  .plan-grid{display:grid; grid-template-columns:1fr; gap:28px;}
+  @media (min-width:768px){ .plan-grid{grid-template-columns:repeat(3,1fr);} }
+  @media (min-width:768px){ .plan-grid.plan-grid-2{grid-template-columns:repeat(2,1fr); max-width:760px;} }
+  .plan-photo{aspect-ratio:4/3; margin-bottom:16px;}
+  .plan-meta{font-family:'JetBrains Mono',monospace; display:flex; justify-content:space-between; font-size:11px; font-weight:400; color:rgba(51,51,51,0.45); border-top:1px solid var(--mline); padding-top:12px;}
+
+  /* neighborhood */
+  .n-grid{display:grid; grid-template-columns:1fr; gap:56px; align-items:start;}
+  @media (min-width:768px){ .n-grid{grid-template-columns:1fr 1fr;} }
+  .n-copy p{font-size:15px; line-height:1.9; color:rgba(51,51,51,0.65); max-width:440px;}
+  .n-list{border-top:1px solid var(--mline);}
+  .n-list li{display:flex; justify-content:space-between; padding:16px 0; border-bottom:1px solid var(--mline); font-size:14px;}
+  .n-list li .place{color:rgba(51,51,51,0.85);}
+  .n-list li .dist{font-family:'JetBrains Mono',monospace; color:var(--red); font-size:11px; font-weight:400;}
+
+  /* contact */
+  .contact-grid{display:grid; grid-template-columns:1fr; gap:56px; align-items:center; position:relative; z-index:10;}
+  @media (min-width:768px){ .contact-grid{grid-template-columns:1fr 1.1fr;} }
+  .agent-role{font-size:11px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:rgba(51,51,51,0.6); margin-bottom:6px;}
+  .agent-office{font-size:14px; color:rgba(51,51,51,0.5); margin-bottom:32px; line-height:1.6;}
+  .agent-reco{font-size:11px; font-weight:500; color:rgba(51,51,51,0.4); border-top:1px solid var(--mline); padding-top:16px;}
+  .contact-card{background:var(--mcharcoal); border:1px solid var(--mline); padding:36px;}
+  .contact-card .phone{font-family:'JetBrains Mono',monospace; font-weight:500; font-size:clamp(24px,3.6vw,30px); color:var(--crisp); display:block; margin-bottom:8px; transition:color .3s ease;}
+  .contact-card .phone:hover{color:var(--red);}
+  .contact-card .email{display:block; font-size:14px; color:rgba(51,51,51,0.55); margin-bottom:32px; transition:color .3s ease;}
+  .contact-card .email:hover{color:var(--mwhite);}
+
+  /* footer */
+  footer{padding:56px 0; background:var(--mblack); border-top:1px solid var(--mline);}
+  .footer-grid{display:flex; flex-direction:column; gap:24px; justify-content:space-between;}
+  @media (min-width:768px){ .footer-grid{flex-direction:row;} }
+  .footer-legal{font-family:'JetBrains Mono',monospace; font-size:11px; color:rgba(51,51,51,0.4); line-height:1.8;}
+  .footer-social{display:flex; gap:24px; font-size:12px; font-weight:500; letter-spacing:0.05em; text-transform:uppercase; color:rgba(51,51,51,0.5);}
+  .footer-social a{transition:color .3s ease;}
+  .footer-social a:hover{color:var(--red);}
+
+  /* ---------- private showing modal ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center;
+    padding:24px; background:rgba(5,5,5,0.78); backdrop-filter:blur(6px);
+    opacity:0; pointer-events:none; transition:opacity .4s ease;
+  }
+  .modal-overlay.open{ opacity:1; pointer-events:auto; }
+  .modal-panel{
+    position:relative; width:100%; max-width:480px; max-height:88vh; overflow-y:auto;
+    background:var(--mcharcoal); border:1px solid var(--mline);
+    box-shadow:0 40px 90px -20px rgba(18,35,61,0.20), inset 0 1px 0 rgba(255,255,255,0.5);
+    padding:40px 32px 32px; transform:translateY(24px) scale(.96); transition:transform .45s cubic-bezier(.22,1,.36,1);
+  }
+  .modal-overlay.open .modal-panel{ transform:translateY(0) scale(1); }
+  .modal-close{
+    position:absolute; top:18px; right:18px; width:34px; height:34px; display:flex; align-items:center; justify-content:center;
+    background:transparent; border:1px solid var(--mline); color:rgba(51,51,51,0.6); cursor:pointer;
+    font-size:16px; line-height:1; transition:border-color .3s ease, color .3s ease, transform .3s ease;
+  }
+  .modal-close:hover{ border-color:var(--red); color:var(--crisp); transform:rotate(90deg); }
+  .modal-panel h3{font-size:clamp(24px,3.4vw,30px); margin-bottom:6px;}
+  .modal-sub{font-size:13px; color:rgba(51,51,51,0.55); margin-bottom:28px; line-height:1.6;}
+  .field{display:flex; flex-direction:column; gap:8px; margin-bottom:18px;}
+  .field label{font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; color:rgba(51,51,51,0.45);}
+  .field input, .field textarea{
+    background:var(--mblack); border:1px solid var(--mline); color:var(--mwhite);
+    font-family:'Inter',sans-serif; font-size:14px; padding:13px 14px; width:100%;
+    transition:border-color .3s ease, box-shadow .3s ease;
+  }
+  .field input:focus, .field textarea:focus{ outline:none; border-color:var(--red); box-shadow:0 0 0 3px rgba(0,70,140,0.18); }
+  .field textarea{ resize:vertical; min-height:80px; font-family:inherit; }
+  .modal-foot{font-size:11px; color:rgba(51,51,51,0.35); margin-top:16px; text-align:center; line-height:1.6;}
+  .form-status{font-size:12px; margin-top:14px; text-align:center; min-height:16px;}
+  .form-status.sending{ color:rgba(51,51,51,0.55); }
+  .form-status.error{ color:var(--redlight); }
+  .modal-success{ text-align:center; padding:16px 0 4px; }
+  .modal-success .check{
+    width:52px; height:52px; margin:0 auto 20px; border-radius:50%; border:1px solid var(--red);
+    display:flex; align-items:center; justify-content:center; color:var(--red); font-size:22px;
+  }
+  .modal-success h3{ margin-bottom:10px; }
+  .modal-success p{ font-size:14px; color:rgba(51,51,51,0.6); line-height:1.7; }
+</style>
+</head>
+
+<body>
+
+<div class="bg-plane" id="bgPlane"></div>
+
+<header class="nav" id="siteNav">
+  <div class="nav-brand">
+    <div class="nav-badge">Royal LePage</div>
+    <div class="nav-id">
+      <div class="name">Deanna Bodden</div>
+      <div class="role">Sales Representative</div>
+    </div>
+  </div>
+  <nav class="nav-links">
+    <a href="#description">The home</a>
+    <a href="#features">Features</a>
+    <a href="#floorplans">Floor plans</a>
+    <a href="#neighborhood">Neighbourhood</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="nav-phone" href="tel:19056484451">905.648.4451</a>
+</header>
+
+<section class="hero">
+  <div class="hero-photo photo-slot" id="heroPhoto"><img src="images/100-watershore-hero.jpg" alt="100 Watershore Drive, Stoney Creek, Ontario — front exterior"></div>
+  <div class="hero-scrim"></div>
+  <div class="orb orb-a" style="top:8%; right:6%;"></div>
+  <div class="orb orb-b" style="bottom:6%; left:4%;"></div>
+
+  <div class="hero-content reveal" id="heroContent">
+    <div class="hero-eyebrow"><span class="rule"></span> Stoney Creek, Ontario · Hamilton Waterfront</div>
+    <h1><span class="liquid-line"><span>100 Watershore</span></span><span class="liquid-line"><span class="red">Drive</span></span></h1>
+    <div class="hero-bottom">
+      <div>
+        <div class="hero-price-label">Lot 2 &mdash; offered at</div>
+        <div class="hero-price">$1,349,900 <span class="cur">+ HST</span></div>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn btn-primary magnetic js-open-showing" href="#contact">Schedule a private showing</a>
+        <a class="btn btn-outline magnetic" href="mailto:deannabodden@royallepage.ca?subject=100%20Watershore%20Drive%20-%20Brochure%20Request&body=Hi%20Deanna%2C%20could%20you%20send%20me%20the%20brochure%20for%20Lot%202%20-%20100%20Watershore%20Drive%3F">Request brochure</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="set">
+      <span>Pre-construction</span><span class="red">&bull;</span>
+      <span>Lot 2 - 100 Watershore Drive</span><span class="red">&bull;</span>
+      <span>Royal LePage State Realty</span><span class="red">&bull;</span>
+      <span>Offered by Deanna Bodden</span><span class="red">&bull;</span>
+    </span>
+    <span class="set" aria-hidden="true">
+      <span>Pre-construction</span><span class="red">&bull;</span>
+      <span>Lot 2 - 100 Watershore Drive</span><span class="red">&bull;</span>
+      <span>Royal LePage State Realty</span><span class="red">&bull;</span>
+      <span>Offered by Deanna Bodden</span><span class="red">&bull;</span>
+    </span>
+  </div>
+</div>
+
+<section class="reveal bg-black" id="description">
+  <div class="wrap desc-grid">
+    <div>
+      <div class="eyebrow">The property</div>
+      <h2>New construction, lakeside living.</h2>
+      <div class="rule-draw"><span></span></div>
+    </div>
+    <div class="desc-copy">
+      <p>Lot 2 at 100 Watershore Drive is a brand-new, luxury pre-construction bungalow in the award-winning Residences at Watershore community in Stoney Creek (Hamilton), Ontario. Three spacious bedrooms unfold across 1,674 square feet of main-floor living on a premium 49 x 109 ft lot, with a flexible 2-bedroom layout also available.</p>
+      <p class="pull">Lakeside living, built new from the ground up.</p>
+      <p>The bright, open-concept interior is finished with a chef-inspired kitchen, cozy gas fireplace, and main-floor laundry, while a full unfinished basement with sump pump leaves room to grow. Outside, high-end brick and stone give way to a covered rear porch, an attached double garage, and a private tandem driveway fitting up to four vehicles.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reveal bg-charcoal" id="features">
+  <div class="wrap">
+    <div class="section-top">
+      <div class="section-head">
+        <div class="eyebrow">Specification</div>
+        <h2>Property features</h2>
+      </div>
+      <div class="mls-tag">Lot 2 &middot; Pre-Construction</div>
+    </div>
+
+    <div class="tilt-wrap stagger" id="statGrid" style="display:contents;">
+      <div class="stat-grid">
+        <div class="tilt stat" style="--i:0"><div class="num count" data-target="3">0</div><div class="lbl">Bedrooms</div></div>
+        <div class="tilt stat" style="--i:1"><div class="num count" data-target="2">0</div><div class="lbl">Bathrooms</div></div>
+        <div class="tilt stat" style="--i:2"><div class="num count" data-target="1674">0</div><div class="lbl">Main floor sq ft</div></div>
+        <div class="tilt stat" style="--i:3"><div class="num">49 x 109</div><div class="lbl">Lot size (ft)</div></div>
+        <div class="tilt stat" style="--i:4"><div class="num">$1,349,900</div><div class="lbl">Price (+HST)</div></div>
+        <div class="tilt stat" style="--i:5"><div class="num count" data-target="2">0</div><div class="lbl">Attached garage</div></div>
+        <div class="tilt stat" style="--i:6"><div class="num count" data-target="4">0</div><div class="lbl">Driveway parking</div></div>
+        <div class="tilt stat" style="--i:7"><div class="num">$<span class="count" data-target="95">0</span></div><div class="lbl">Monthly POTL fee</div></div>
+      </div>
+    </div>
+
+    <ul class="feature-rows">
+      <li><span>Style</span><span class="val">Bungalow, pre-construction</span></li>
+      <li><span>Kitchen</span><span class="val">Chef-inspired, open concept</span></li>
+      <li><span>Fireplace</span><span class="val">Gas</span></li>
+      <li><span>Laundry</span><span class="val">Main floor</span></li>
+      <li><span>Basement</span><span class="val">Full, unfinished, sump pump</span></li>
+      <li><span>Exterior</span><span class="val">Brick &amp; stone</span></li>
+      <li><span>Primary ensuite</span><span class="val">Double vanity, quartz</span></li>
+      <li><span>Secondary bedrooms</span><span class="val">Private semi-ensuite</span></li>
+      <li><span>Parking</span><span class="val">Double garage + tandem driveway (4 vehicles)</span></li>
+      <li><span>POTL management</span><span class="val">Wilson Blanchard</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="reveal bg-black">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:48px;">
+      <div class="eyebrow">In detail</div>
+      <h2>Gallery</h2>
+    </div>
+    <div class="tilt-wrap gallery-grid stagger">
+      <div class="tilt photo-slot g-big" style="--i:0"><span class="tag">Open-concept living room</span></div>
+      <div class="tilt photo-slot g-tall" style="--i:1"><span class="tag">Chef-inspired kitchen</span></div>
+      <div class="tilt photo-slot g-tall" style="--i:2"><span class="tag">Primary ensuite</span></div>
+      <div class="tilt photo-slot g-sq" style="--i:3"><span class="tag">Dining area</span></div>
+      <div class="tilt photo-slot g-sq" style="--i:4"><span class="tag">Secondary bedroom</span></div>
+      <div class="tilt photo-slot g-tall g-wide" style="--i:5"><span class="tag">Covered rear porch</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal bg-charcoal" id="floorplans">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:48px;">
+      <div class="eyebrow">Layout</div>
+      <h2>Floor plans</h2>
+      <p style="font-size:14px; color:rgba(51,51,51,0.55); margin-top:14px; max-width:400px;">Full dimensioned plans are available on request from Deanna Bodden.</p>
+    </div>
+    <div class="tilt-wrap plan-grid plan-grid-2 stagger">
+      <div style="--i:0">
+        <div class="tilt photo-slot plan-photo"><span class="tag">Main floor</span></div>
+        <div class="plan-meta"><span>Main floor</span><span>1,674 sq ft</span></div>
+      </div>
+      <div style="--i:1">
+        <div class="tilt photo-slot plan-photo"><span class="tag">Basement</span></div>
+        <div class="plan-meta"><span>Basement</span><span>Unfinished, sump pump</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal bg-black" id="neighborhood">
+  <div class="wrap n-grid">
+    <div class="n-copy">
+      <div class="eyebrow">Where you'll be</div>
+      <h2 style="margin:14px 0 18px; font-size:clamp(26px,4vw,36px);">Stoney Creek, Hamilton Waterfront</h2>
+      <p>Situated at the corner of Aquamarine Drive &amp; Watershore Drive, just north of the QEW via Fruitland Road, The Residences at Watershore is an exclusive lakeside enclave directly along the shores of Lake Ontario — steps from marinas, sandy beaches, quiet waterfront parks, playgrounds, walking trails, and top-rated local schools.</p>
+    </div>
+    <ul class="n-list">
+      <li><span class="place">Fifty Point Conservation Area &amp; marina</span><span class="dist">5 min drive</span></li>
+      <li><span class="place">Confederation Beach Park</span><span class="dist">10 min drive</span></li>
+      <li><span class="place">QEW via Fruitland Road</span><span class="dist">5 min drive</span></li>
+      <li><span class="place">Top-rated local schools</span><span class="dist">Nearby</span></li>
+      <li><span class="place">Shopping &amp; everyday amenities</span><span class="dist">10 min drive</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="reveal bg-card" id="contact" style="position:relative; overflow:hidden;">
+  <div class="orb orb-a" style="top:-10%; left:-8%; width:340px; height:340px;"></div>
+  <div class="wrap tilt-wrap contact-grid">
+    <div>
+      <div class="eyebrow">Offered by</div>
+      <h2 style="margin:14px 0 32px; font-size:clamp(30px,4vw,44px);">Deanna Bodden</h2>
+      <div class="agent-role">Sales Representative</div>
+      <div class="agent-office">Royal LePage State Realty, Brokerage<br>825 North Service Road, Stoney Creek, Ontario L8E 0J7</div>
+      <div class="agent-reco">RECO Registration # on request</div>
+    </div>
+
+    <div class="tilt contact-card">
+      <a class="phone" href="tel:19056484451">905.648.4451</a>
+      <a class="email" href="mailto:deannabodden@royallepage.ca">deannabodden@royallepage.ca</a>
+      <a class="btn btn-primary btn-block js-open-showing" href="#contact">Schedule a private showing</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-legal">
+      Lot 2 - 100 Watershore Drive, Hamilton, Ontario L8E 0C1<br>
+      &copy; 2026 Royal LePage State Realty, Brokerage.<br>
+      The Residences at Watershore &middot; Pre-Construction<br>
+      Information deemed reliable but not guaranteed and should be independently verified.
+    </div>
+    <div class="footer-social">
+      <a href="https://ca.linkedin.com/in/deanna-bodden-138a3b25" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/de__bo/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/RealEstatewithDeanna" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.deannabodden.ca/" target="_blank" rel="noopener">Website</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="showingOverlay" aria-hidden="true">
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="showingTitle">
+    <button class="modal-close" id="showingClose" aria-label="Close">&times;</button>
+
+    <div id="showingFormWrap">
+      <div class="eyebrow">Lot 2 - 100 Watershore Drive</div>
+      <h3 id="showingTitle" style="margin:14px 0 0;">Request a private showing</h3>
+      <p class="modal-sub">Share your details and Deanna Bodden will follow up directly to confirm a time.</p>
+
+      <form id="showingForm">
+        <div class="field">
+          <label for="sName">Full name</label>
+          <input type="text" id="sName" name="name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="sEmail">Email</label>
+          <input type="email" id="sEmail" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="sPhone">Phone</label>
+          <input type="tel" id="sPhone" name="phone" required autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="sDate">Preferred date / time</label>
+          <input type="text" id="sDate" name="preferred" placeholder="e.g. Saturday afternoon">
+        </div>
+        <div class="field">
+          <label for="sMsg">Message (optional)</label>
+          <textarea id="sMsg" name="message" placeholder="Anything Deanna should know before the showing"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block magnetic" id="showingSubmit">Send request</button>
+        <div class="form-status" id="showingStatus"></div>
+      </form>
+      <div class="modal-foot">Sent directly to siteshotweb@gmail.com &middot; your information is never shared.</div>
+    </div>
+
+    <div class="modal-success" id="showingSuccess" style="display:none;">
+      <div class="check">&check;</div>
+      <h3 id="successTitle">Request sent</h3>
+      <p id="successBody">Thank you — your private showing request has been sent. Deanna Bodden will be in touch shortly to confirm.</p>
+      <div id="successExtra"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // scroll reveal with stagger
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // nav shadow on scroll
+  var nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function(){
+    nav.style.boxShadow = window.scrollY > 40 ? '0 1px 0 rgba(18,35,61,0.08)' : 'none';
+  }, {passive:true});
+
+  // layered parallax: hero photo dissolves away on scroll (parallax + scale + fade)
+  // fast plane (photo) + fixed bg texture (slow plane) behind everything
+  // combined with cursor-based 3D tilt so both effects compose into one transform
+  var heroPhoto = document.getElementById('heroPhoto');
+  var bgPlane = document.getElementById('bgPlane');
+  var heroState = { scrollY:0, rotX:0, rotY:0 };
+
+  function applyHeroTransform(){
+    if (!heroPhoto) return;
+    var vh = window.innerHeight;
+    var y = heroState.scrollY;
+    var progress = Math.min(y / vh, 1);
+    var scale = 1.06 + progress * 0.18; // base overscale hides edges revealed by the tilt rotation
+    var translateY = y * 0.4;
+    heroPhoto.style.transform =
+      'translate3d(0,' + translateY + 'px,0) scale(' + scale + ') rotateX(' + heroState.rotX + 'deg) rotateY(' + heroState.rotY + 'deg)';
+  }
+
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    var vh = window.innerHeight;
+    heroState.scrollY = y;
+    if (heroPhoto && y < vh){
+      var progress = Math.min(y / vh, 1);
+      var fade = Math.max(1 - progress * 1.4, 0); // fades out before fully scrolled
+      heroPhoto.style.opacity = fade;
+    }
+    applyHeroTransform();
+    if (bgPlane){
+      bgPlane.style.transform = 'translate3d(0,' + (y * 0.06) + 'px,0)';
+    }
+  }, {passive:true});
+
+  if (heroPhoto){
+    heroPhoto.addEventListener('mousemove', function(e){
+      var r = heroPhoto.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - 0.5;
+      var py = (e.clientY - r.top) / r.height - 0.5;
+      heroState.rotX = py * -6;
+      heroState.rotY = px * 8;
+      heroPhoto.style.setProperty('--mx', ((px + 0.5) * 100) + '%');
+      heroPhoto.style.setProperty('--my', ((py + 0.5) * 100) + '%');
+      applyHeroTransform();
+    });
+    heroPhoto.addEventListener('mouseleave', function(){
+      heroState.rotX = 0;
+      heroState.rotY = 0;
+      applyHeroTransform();
+    });
+  }
+
+  // 3D tilt on pointer move, with a specular highlight that tracks the cursor
+  var tilts = document.querySelectorAll('.tilt');
+  tilts.forEach(function(el){
+    el.addEventListener('mousemove', function(e){
+      var r = el.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - 0.5;
+      var py = (e.clientY - r.top) / r.height - 0.5;
+      el.style.transform = 'rotateX(' + (py * -8) + 'deg) rotateY(' + (px * 10) + 'deg) translateZ(6px)';
+      el.style.setProperty('--mx', ((px + 0.5) * 100) + '%');
+      el.style.setProperty('--my', ((py + 0.5) * 100) + '%');
+    });
+    el.addEventListener('mouseleave', function(){
+      el.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0)';
+    });
+  });
+
+  // magnetic pull on primary buttons
+  var magnets = document.querySelectorAll('.magnetic');
+  magnets.forEach(function(el){
+    el.addEventListener('mousemove', function(e){
+      var r = el.getBoundingClientRect();
+      var mx = (e.clientX - r.left - r.width / 2) * 0.25;
+      var my = (e.clientY - r.top - r.height / 2) * 0.35;
+      el.style.transform = 'translate(' + mx + 'px,' + (my - 4) + 'px) translateZ(10px)';
+    });
+    el.addEventListener('mouseleave', function(){
+      el.style.transform = '';
+    });
+  });
+
+  // count-up numbers
+  var counters = document.querySelectorAll('.count');
+  if ('IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseFloat(el.dataset.target);
+        var decimals = parseInt(el.dataset.decimals || '0', 10);
+        var start = performance.now();
+        var duration = 1400;
+        function tick(now){
+          var p = Math.min((now - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          var val = target * eased;
+          el.textContent = val.toFixed(decimals);
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        cio.unobserve(el);
+      });
+    }, {threshold:0.4});
+    counters.forEach(function(el){ cio.observe(el); });
+  } else {
+    counters.forEach(function(el){
+      var target = parseFloat(el.dataset.target);
+      var decimals = parseInt(el.dataset.decimals || '0', 10);
+      el.textContent = target.toFixed(decimals);
+    });
+  }
+
+  // ---------- private showing modal ----------
+  // Sends silently via FormSubmit.co — no account needed.
+  // First-ever submission triggers a one-time confirmation email to
+  // siteshotweb@gmail.com; click the link in it once and every request
+  // after that arrives automatically with no action needed from visitors.
+  var FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/siteshotweb@gmail.com';
+  var DESTINATION_EMAIL = 'siteshotweb@gmail.com';
+
+  var overlay = document.getElementById('showingOverlay');
+  var closeBtn = document.getElementById('showingClose');
+  var formWrap = document.getElementById('showingFormWrap');
+  var successWrap = document.getElementById('showingSuccess');
+  var form = document.getElementById('showingForm');
+  var statusEl = document.getElementById('showingStatus');
+  var submitBtn = document.getElementById('showingSubmit');
+
+  function openModal(){
+    formWrap.style.display = 'block';
+    successWrap.style.display = 'none';
+    statusEl.textContent = '';
+    statusEl.className = 'form-status';
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function(){ document.getElementById('sName').focus(); }, 300);
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.js-open-showing').forEach(function(btn){
+    btn.addEventListener('click', function(e){ e.preventDefault(); openModal(); });
+  });
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+
+  function buildMailto(data){
+    var subject = 'Private Showing Request - Lot 2, 100 Watershore Drive';
+    var body = 'Name: ' + data.name + '\n' +
+               'Email: ' + data.email + '\n' +
+               'Phone: ' + data.phone + '\n' +
+               'Preferred date/time: ' + (data.preferred || 'Not specified') + '\n' +
+               'Message: ' + (data.message || 'None') + '\n\n' +
+               'Submitted from Lot 2, 100 Watershore Drive listing page.';
+    return 'mailto:' + DESTINATION_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+
+  function buildPlainSummary(data){
+    return 'Name: ' + data.name + '\n' +
+           'Email: ' + data.email + '\n' +
+           'Phone: ' + data.phone + '\n' +
+           'Preferred date/time: ' + (data.preferred || 'Not specified') + '\n' +
+           'Message: ' + (data.message || 'None');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = {
+      name: document.getElementById('sName').value.trim(),
+      email: document.getElementById('sEmail').value.trim(),
+      phone: document.getElementById('sPhone').value.trim(),
+      preferred: document.getElementById('sDate').value.trim(),
+      message: document.getElementById('sMsg').value.trim()
+    };
+    if (!data.name || !data.email || !data.phone){
+      statusEl.textContent = 'Please fill in your name, email, and phone.';
+      statusEl.className = 'form-status error';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    statusEl.textContent = 'Sending your request…';
+    statusEl.className = 'form-status sending';
+
+    function showSuccess(sentAutomatically){
+      formWrap.style.display = 'none';
+      successWrap.style.display = 'block';
+      submitBtn.disabled = false;
+      var successTitle = document.getElementById('successTitle');
+      var successBody = document.getElementById('successBody');
+      var successExtra = document.getElementById('successExtra');
+      if (sentAutomatically){
+        successTitle.textContent = 'Request sent';
+        successBody.textContent = 'Thank you — your private showing request has been sent. Deanna Bodden will be in touch shortly to confirm.';
+        successExtra.innerHTML = '';
+      } else {
+        successTitle.textContent = 'Almost done';
+        successBody.textContent = 'We\'ve opened an email draft to Deanna Bodden with your details — please hit Send in that window to complete your request. If nothing opened (no email app installed on this device), copy your details below and send them from your webmail instead.';
+        successExtra.innerHTML = '<button type="button" class="btn btn-outline" id="copyDetailsBtn" style="margin-top:16px;">Copy my details</button>' +
+          '<div id="copyDetailsStatus" style="font-size:12px; color:rgba(51,51,51,0.45); margin-top:10px;"></div>';
+        var copyBtn = document.getElementById('copyDetailsBtn');
+        copyBtn.addEventListener('click', function(){
+          var text = buildPlainSummary(data);
+          navigator.clipboard.writeText(text).then(function(){
+            document.getElementById('copyDetailsStatus').textContent = 'Copied — paste it into an email to ' + DESTINATION_EMAIL;
+          }).catch(function(){
+            document.getElementById('copyDetailsStatus').textContent = 'Could not copy automatically — please select and copy the details manually.';
+          });
+        });
+      }
+    }
+
+    fetch(FORMSUBMIT_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        preferred_time: data.preferred,
+        message: data.message,
+        _subject: 'Private Showing Request - Lot 2, 100 Watershore Drive',
+        _replyto: data.email
+      })
+    }).then(function(res){
+      if (res.ok){ showSuccess(true); }
+      else { throw new Error('FormSubmit error'); }
+    }).catch(function(){
+      // form service failed (or the one-time confirmation hasn't been clicked yet) —
+      // fall back to opening a pre-filled email draft so the request still gets through.
+      // location.href is used instead of window.open() because this runs inside an
+      // async callback, and browsers silently block window.open() calls that aren't
+      // a direct, synchronous result of the click.
+      window.location.href = buildMailto(data);
+      showSuccess(false);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
